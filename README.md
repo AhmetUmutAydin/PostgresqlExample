@@ -1,2 +1,2 @@
-# PostgresqlExample
+# Postgresql Example
 Postgresql examples with Npgsql
