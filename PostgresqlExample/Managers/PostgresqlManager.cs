@@ -167,7 +167,7 @@ namespace PostgresqlExample.Managers
             using (var con = new NpgsqlConnection(connectionString))
             {
                 con.Open();
-                string sql = "SELECT * FROM Posts INNER JOIN PostCategories ON Posts.Id = "+ categoryId;
+                string sql = "SELECT * FROM Posts INNER JOIN PostCategories ON Posts.Id = PostCategories.PostId where PostCategories.CategoryId=" +categoryId ;
                 var cmd = new NpgsqlCommand(sql, con);
                 NpgsqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
